@@ -7,24 +7,24 @@
       <form class="ui form" #addProductForm="ngForm" (ngSubmit)="onSubmit(addProductForm)">
           <div class="field">
             <label>Title</label>
-            <input name="title" ngModel required #title="ngModel">
+            <input name="title" ngModel required #title="ngModel" required>
+            <div *ngIf="!title.valid && title.touched" class="ui red message">Please enter a Title</div>
           </div>
           <div class="field">
             <label>Image URL</label>
             <input name="image" ngModel required #image="ngModel">
+            <div *ngIf="!image.valid && image.touched" class="ui red message">Please enter a Image</div>
           </div>
           <div class="field">
               <label>Price</label>
-              <input name="price" ngModel required #price="ngModel">
+              <input type="number" name="price" ngModel required #price="ngModel" required min="0" oninput="validity.valid||(value='');">
+              <div *ngIf="!price.valid && price.touched" class="ui red message">Please enter a price greater than 0</div>
             </div>
             <div class="field">
                 <label>Description</label>
                 <input type="text" name="description" ngModel required #description="ngModel">
+                <div *ngIf="!description.valid && description.touched" class="ui red message">Please enter a title</div>
               </div>
-          <button class="ui button" type="submit">Submit</button>
+          <button [disabled]="!addProductForm.valid" class="ui button" type="submit">Submit</button>
         </form>
   </div>
-
-
-  <button *ngIf="buttonView" [routerLink]="['/']" routerLinkActive="router-link-active">Go Back</button>
-
