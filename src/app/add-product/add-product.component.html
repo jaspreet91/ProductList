@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+    <span><a [routerLink]="['/']"><h1 style="color: white">HomePage</h1></a></span>
+  </mat-toolbar>
+
+
+  <div class=" semantic ui main segment container" style="margin-top: 40px">
+      <form class="ui form" #addProductForm="ngForm" (ngSubmit)="onSubmit(addProductForm)">
+          <div class="field">
+            <label>Title</label>
+            <input name="title" ngModel required #title="ngModel">
+          </div>
+          <div class="field">
+            <label>Image URL</label>
+            <input name="image" ngModel required #image="ngModel">
+          </div>
+          <div class="field">
+              <label>Price</label>
+              <input name="price" ngModel required #price="ngModel">
+            </div>
+            <div class="field">
+                <label>Description</label>
+                <input type="text" name="description" ngModel required #description="ngModel">
+              </div>
+          <button class="ui button" type="submit">Submit</button>
+        </form>
+  </div>
+
+
+  <button *ngIf="buttonView" [routerLink]="['/']" routerLinkActive="router-link-active">Go Back</button>
+

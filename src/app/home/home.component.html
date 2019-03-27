@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+    <span><a [routerLink]="['/']"><h1 style="color: white">HomePage</h1></a></span>
+    <span class="spacer"></span>
+
+
+        <a mat-button [routerLink]="['/create']" routerLinkActive="mat-accent" ><h1>Add Products</h1></a>
+
+  </mat-toolbar>
+
+<div class="ui main segment container">
+    <h1 style="margin-left: 25px">Product List : </h1>
+    <mat-list>
+        <mat-list-item *ngFor="let product of productArray">
+          <img matListAvatar src="{{product.image}}" alt="{{product.title}}">
+          <h3 matLine  (click)="sendData(product)" style="cursor: pointer;"><u>{{product.title}}</u> </h3>
+          <p matLine>
+            <span> {{product.description}} </span>
+            <span class="demo-2"> --  {{product.price | currency}} </span>
+          </p>
+        </mat-list-item>
+      </mat-list>
+</div>
+

@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+    <span><a [routerLink]="['/']"><h1 style="color: white">HomePage</h1></a></span>
+  </mat-toolbar>
+
+<div class="semantic ui container" style="border-style: solid; border-color: lightblue; margin-top: 5rem">
+    <div class="flex-container" style="margin-top: 30px">
+        <div class="column">
+            <div class="ui raised segments" style="margin-top: 20px;">
+                <div class="ui segment">
+                    <div class="ui segment">
+                        <p><b>Title :</b> {{detailedProduct.title | uppercase}}</p>
+                      </div>
+                </div>
+                <div class="ui segment">
+                  <div class = "ui segment">
+                      <p><b>Description:</b> {{detailedProduct.description}}</p>
+                  </div>
+                </div>
+                <div class="ui segment">
+                    <div class="ui segment">
+                  <p><b>Price:</b>  {{detailedProduct.price | currency}}</p>
+                  </div>
+                </div>
+              </div>
+
+        </div>
+        <div class="column bg-alt"> <img src="{{detailedProduct.image}}" style="height: 100%; width: 100%"></div>
+    </div>
+
+      <br>
+      <button (click)="like()" style="margin-left: 46%;margin-top: 5px;">
+          <i class="material-icons">
+              thumb_up_alt
+              </i><br>Total Likes : {{currentLikes}} </button>
+</div>
+
