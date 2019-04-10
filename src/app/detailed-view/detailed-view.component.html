@@ -8,23 +8,23 @@
             <div class="ui raised segments" style="margin-top: 20px;">
                 <div class="ui segment">
                     <div class="ui segment">
-                        <p><b>Title :</b> {{detailedProduct.title | uppercase}}</p>
+                        <p><b>Title :</b> {{detailedProduct?.title | uppercase}}</p>
                       </div>
                 </div>
                 <div class="ui segment">
                   <div class = "ui segment">
-                      <p><b>Description:</b> {{detailedProduct.description}}</p>
+                      <p><b>Description:</b> {{detailedProduct?.description}}</p>
                   </div>
                 </div>
                 <div class="ui segment">
                     <div class="ui segment">
-                  <p><b>Price:</b>  {{detailedProduct.price | currency}}</p>
+                  <p><b>Price:</b>  {{detailedProduct?.price | currency}}</p>
                   </div>
                 </div>
               </div>
 
         </div>
-        <div class="column bg-alt"> <img src="{{detailedProduct.image}}" style="height: 100%; width: 100%"></div>
+        <div class="column bg-alt"> <img src="{{detailedProduct?.image}}" style="height: 100%; width: 100%"></div>
     </div>
 
       <br>

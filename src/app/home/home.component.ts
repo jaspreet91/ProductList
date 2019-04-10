@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   }
 
   sendData(data: ProductModel) {
-    this.router.navigate([data._id]);
     this.dataTransferService.singleProduct.next(data);
+    this.router.navigate([data._id]);
   }
 }

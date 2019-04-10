@@ -8,12 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataTransferService {
 
-  productsArray: ProductModel[] = [
-    {_id: '1' , title: 'Iphone', image: 'https://media.wired.com/photos/5b22c5c4b878a15e9ce80d92/master/pass/iphonex-TA.jpg',
-  price: 800},
-  {_id: '2' , title: 'Samsung', image: 'https://ksassets.timeincuk.net/wp/uploads/sites/54/2019/03/s10plus-1-3-920x613.jpg',
-  price: 1000}
-  ];
+  productsArray: ProductModel[] = [];
 
   singleProduct = new Subject<ProductModel>();
 
